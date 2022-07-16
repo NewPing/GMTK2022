@@ -15,9 +15,9 @@
 [ext_resource path="res://assets/Hero Knight/Sprites/HeroKnight/Attack1/HeroKnight_Attack1_2.png" type="Texture" id=13]
 [ext_resource path="res://assets/Hero Knight/Sprites/HeroKnight/Attack1/HeroKnight_Attack1_4.png" type="Texture" id=14]
 [ext_resource path="res://assets/Hero Knight/Sprites/HeroKnight/Attack1/HeroKnight_Attack1_3.png" type="Texture" id=15]
-[ext_resource path="res://Player.cs" type="Script" id=16]
+[ext_resource path="res://Knight.cs" type="Script" id=16]
 [ext_resource path="res://Game.cs" type="Script" id=17]
-[ext_resource path="res://Player2.cs" type="Script" id=18]
+[ext_resource path="res://Knight2.cs" type="Script" id=18]
 [ext_resource path="res://assets/Flat Night 2 BG.png" type="Texture" id=19]
 [ext_resource path="res://assets/castle.png" type="Texture" id=20]
 
@@ -40,40 +40,6 @@ extents = Vector2( 23.5, 21 )
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 17 )
 
-[node name="Button" type="Button" parent="."]
-margin_left = 344.0
-margin_top = 94.0
-margin_right = 496.0
-margin_bottom = 144.0
-
-[node name="Player" type="KinematicBody2D" parent="."]
-script = ExtResource( 16 )
-
-[node name="Sprite" type="AnimatedSprite" parent="Player"]
-position = Vector2( 352, 230 )
-frames = SubResource( 1 )
-frame = 7
-playing = true
-script = ExtResource( 9 )
-
-[node name="Collision" type="CollisionShape2D" parent="Player"]
-position = Vector2( 341.5, 235 )
-shape = SubResource( 2 )
-
-[node name="Player2" type="KinematicBody2D" parent="."]
-script = ExtResource( 18 )
-
-[node name="Sprite" type="AnimatedSprite" parent="Player2"]
-position = Vector2( 469, 223 )
-frames = SubResource( 1 )
-frame = 6
-playing = true
-script = ExtResource( 9 )
-
-[node name="Collision" type="CollisionShape2D" parent="Player2"]
-position = Vector2( 460, 228 )
-shape = SubResource( 2 )
-
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = 2.0
 margin_top = 1.0
@@ -85,18 +51,56 @@ texture = ExtResource( 19 )
 expand = true
 
 [node name="TextureRect3" type="TextureRect" parent="."]
-margin_left = 736.0
-margin_top = 264.0
-margin_right = 1024.0
-margin_bottom = 581.0
+margin_left = 872.0
+margin_top = 386.0
+margin_right = 1022.0
+margin_bottom = 545.0
 texture = ExtResource( 20 )
+expand = true
+stretch_mode = 5
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-margin_left = 14.0
-margin_top = 270.0
-margin_right = 302.0
-margin_bottom = 587.0
+margin_left = 16.0
+margin_top = 383.0
+margin_right = 176.0
+margin_bottom = 547.0
 texture = ExtResource( 20 )
+expand = true
+stretch_mode = 5
 
-[connection signal="pressed" from="Button" to="Player/Sprite" method="_on_Button_pressed"]
-[connection signal="animation_finished" from="Player/Sprite" to="Player/Sprite" method="_on_Sohn_animation_finished"]
+[node name="Button" type="Button" parent="."]
+margin_left = 344.0
+margin_top = 94.0
+margin_right = 496.0
+margin_bottom = 144.0
+
+[node name="Knight" type="KinematicBody2D" parent="."]
+script = ExtResource( 16 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Knight"]
+position = Vector2( 275, 500 )
+frames = SubResource( 1 )
+frame = 2
+playing = true
+script = ExtResource( 9 )
+
+[node name="Collision" type="CollisionShape2D" parent="Knight"]
+position = Vector2( 265, 505 )
+shape = SubResource( 2 )
+
+[node name="Knight2" type="KinematicBody2D" parent="."]
+script = ExtResource( 18 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Knight2"]
+position = Vector2( 428, 500 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
+script = ExtResource( 9 )
+
+[node name="Collision" type="CollisionShape2D" parent="Knight2"]
+position = Vector2( 416, 506 )
+shape = SubResource( 2 )
+
+[connection signal="pressed" from="Button" to="Knight/Sprite" method="_on_Button_pressed"]
+[connection signal="animation_finished" from="Knight/Sprite" to="Knight/Sprite" method="_on_Sohn_animation_finished"]
