@@ -13,10 +13,11 @@ public class Player : Area2D
 		
 	}
 	
-	public override void _Process(float delta)
-  	{
-		Position.Set(Position.x +1, Position.y);
-  	}
+	public override void _PhysicsProcess(float delta){
+		Position = new Vector2(Position.x +5,0);
+	}
+	
+	
 
 	private void _on_Player_area_entered(object area)
 	{

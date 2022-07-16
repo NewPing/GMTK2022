@@ -42,13 +42,13 @@ margin_top = 120.0
 margin_right = 496.0
 margin_bottom = 170.0
 
-[node name="Player2" type="KinematicBody2D" parent="."]
+[node name="Player2" type="Area2D" parent="."]
 script = ExtResource( 17 )
 
 [node name="Sprite" type="AnimatedSprite" parent="Player2"]
 position = Vector2( 494, 236 )
 frames = SubResource( 1 )
-frame = 3
+frame = 6
 playing = true
 flip_h = true
 script = ExtResource( 9 )
@@ -57,13 +57,13 @@ script = ExtResource( 9 )
 position = Vector2( 505, 241 )
 shape = SubResource( 2 )
 
-[node name="Player" type="KinematicBody2D" parent="."]
+[node name="Player" type="Area2D" parent="."]
 script = ExtResource( 16 )
 
 [node name="Sprite" type="AnimatedSprite" parent="Player"]
 position = Vector2( 352, 230 )
 frames = SubResource( 1 )
-frame = 4
+frame = 7
 playing = true
 script = ExtResource( 9 )
 

@@ -12,7 +12,7 @@ public class AnimatedSprite : Godot.AnimatedSprite
 	public override void _Ready()
 	{
 		_animatedSprite = GetNode<AnimatedSprite>("Sohn");
-		GD.Print("test");
+
 	}
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,6 +20,8 @@ public class AnimatedSprite : Godot.AnimatedSprite
 //  {
 //      
 //  }
+
+	
 	
 	private void _on_Button_pressed()
 	{
