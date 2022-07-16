@@ -15,10 +15,10 @@ scale = Vector2( 0.54974, 0.581944 )
 texture = ExtResource( 3 )
 
 [node name="TextureButton" type="TextureButton" parent="."]
-margin_left = 248.0
-margin_top = 169.0
-margin_right = 787.0
-margin_bottom = 346.0
+margin_left = 293.0
+margin_top = 197.0
+margin_right = 753.0
+margin_bottom = 393.0
 texture_normal = SubResource( 1 )
 script = ExtResource( 1 )
 
