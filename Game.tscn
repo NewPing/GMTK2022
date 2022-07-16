@@ -80,7 +80,7 @@ script = ExtResource( 16 )
 [node name="Sprite" type="AnimatedSprite" parent="Knight"]
 position = Vector2( 275, 500 )
 frames = SubResource( 1 )
-frame = 2
+frame = 3
 playing = true
 script = ExtResource( 9 )
 
@@ -94,7 +94,7 @@ script = ExtResource( 18 )
 [node name="Sprite" type="AnimatedSprite" parent="Knight2"]
 position = Vector2( 428, 500 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 script = ExtResource( 9 )
 

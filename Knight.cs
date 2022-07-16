@@ -12,11 +12,10 @@ public class Knight : KinematicBody2D
 		_movementDirection = 1; //1 right; -1 left
 	}
 	
-	
-	
 	public override void _PhysicsProcess(float delta){
 		float input = _movementDirection;
 		Vector2 position = Position;
+		position = position.Normalized();
 		position += new Vector2(input * MoveSpeed, 0);
 		//Position = position;
 		
