@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_4.png" type="Texture" id=1]
 [ext_resource path="res://assets/Hero Knight/Sprites/HeroKnight/Idle/HeroKnight_Idle_0.png" type="Texture" id=2]
@@ -15,6 +15,8 @@
 [ext_resource path="res://assets/Hero Knight/Sprites/HeroKnight/Attack1/HeroKnight_Attack1_2.png" type="Texture" id=13]
 [ext_resource path="res://assets/Hero Knight/Sprites/HeroKnight/Attack1/HeroKnight_Attack1_4.png" type="Texture" id=14]
 [ext_resource path="res://assets/Hero Knight/Sprites/HeroKnight/Attack1/HeroKnight_Attack1_3.png" type="Texture" id=15]
+[ext_resource path="res://Player.cs" type="Script" id=16]
+[ext_resource path="res://Player2.cs" type="Script" id=17]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -29,14 +31,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 23.5, 21 )
 
-[node name="Sohn" type="AnimatedSprite" parent="."]
-position = Vector2( 425, 226 )
-frames = SubResource( 1 )
-frame = 6
-playing = true
-script = ExtResource( 9 )
+[node name="Node2D" type="Node2D"]
 
 [node name="Button" type="Button" parent="."]
 margin_left = 344.0
@@ -44,5 +42,35 @@ margin_top = 120.0
 margin_right = 496.0
 margin_bottom = 170.0
 
-[connection signal="animation_finished" from="Sohn" to="Sohn" method="_on_Sohn_animation_finished"]
-[connection signal="pressed" from="Button" to="Sohn" method="_on_Button_pressed"]
+[node name="Player2" type="KinematicBody2D" parent="."]
+script = ExtResource( 17 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Player2"]
+position = Vector2( 494, 236 )
+frames = SubResource( 1 )
+frame = 3
+playing = true
+flip_h = true
+script = ExtResource( 9 )
+
+[node name="Collision" type="CollisionShape2D" parent="Player2"]
+position = Vector2( 505, 241 )
+shape = SubResource( 2 )
+
+[node name="Player" type="KinematicBody2D" parent="."]
+script = ExtResource( 16 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Player"]
+position = Vector2( 352, 230 )
+frames = SubResource( 1 )
+frame = 4
+playing = true
+script = ExtResource( 9 )
+
+[node name="Collision" type="CollisionShape2D" parent="Player"]
+position = Vector2( 341.5, 235 )
+shape = SubResource( 2 )
+
+[connection signal="pressed" from="Button" to="Player/Sprite" method="_on_Button_pressed"]
+[connection signal="animation_finished" from="Player2/Sprite" to="Player2/Sprite" method="_on_Sohn_animation_finished"]
+[connection signal="animation_finished" from="Player/Sprite" to="Player/Sprite" method="_on_Sohn_animation_finished"]
