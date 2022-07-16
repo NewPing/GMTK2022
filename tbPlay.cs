@@ -11,7 +11,7 @@ public class tbPlay : TextureButton
 
 	public void _on_TextureButton_pressed()
 	{
-		GetTree().ChangeScene("res://Game.tscn");
+		//GetTree().ChangeScene("res://Game.tscn");
 	}
 
 }
