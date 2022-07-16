@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://tbPlay.cs" type="Script" id=1]
+[ext_resource path="res://playbutton.png" type="Texture" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 254.0
+margin_top = 199.0
+margin_right = 793.0
+margin_bottom = 376.0
+texture_normal = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_TextureButton_pressed"]
