@@ -1,15 +1,21 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://tbPlay.cs" type="Script" id=1]
 [ext_resource path="res://playbutton.png" type="Texture" id=2]
+[ext_resource path="res://Background Main Menu.PNG" type="Texture" id=3]
 
 [node name="Node2D" type="Node2D"]
 
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 510.25, 311.75 )
+scale = Vector2( 0.54974, 0.581944 )
+texture = ExtResource( 3 )
+
 [node name="TextureButton" type="TextureButton" parent="."]
-margin_left = 254.0
-margin_top = 199.0
-margin_right = 793.0
-margin_bottom = 376.0
+margin_left = 248.0
+margin_top = 169.0
+margin_right = 787.0
+margin_bottom = 346.0
 texture_normal = ExtResource( 2 )
 script = ExtResource( 1 )
 
