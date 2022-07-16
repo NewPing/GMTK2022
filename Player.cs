@@ -1,32 +1,34 @@
 using Godot;
 using System;
 
-public class Player : Area2D
+public class Player : KinematicBody2D
 {
-	// Declare member variables here. Examples:
-	// private int a = 2;
-	// private string b = "text";
+	private const int MoveSpeed = 100;
+	private int _movementDirection;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		
+		_movementDirection = 1; //1 right; -1 left
 	}
+	
+	
 	
 	public override void _PhysicsProcess(float delta){
-		Position = new Vector2(Position.x +5,0);
-	}
-	
-	
-
-	private void _on_Player_area_entered(object area)
-	{
-		if (area is Player2 enemy){
-			GD.Print("Hit");
+		float input = _movementDirection;
+		Vector2 position = Position;
+		position += new Vector2(input * MoveSpeed, 0);
+		//Position = position;
+		
+		var collisionObj = MoveAndCollide(position * delta);
+		if (collisionObj != null){
+			GD.Print(((Node)collisionObj.Collider));
+			((KinematicBody2D)collisionObj.Collider).MoveAndCollide(position * delta);
 		}
 	}
 
-
 }
+
+
 
 
