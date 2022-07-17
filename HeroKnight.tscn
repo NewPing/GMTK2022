@@ -31,20 +31,26 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 23.5, 21 )
+extents = Vector2( 24.5, 27 )
 
 [node name="HeroKnight" type="KinematicBody2D"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-position = Vector2( 275, 500 )
+position = Vector2( 24, 573.5 )
 frames = SubResource( 1 )
-frame = 1
+frame = 6
 playing = true
 script = ExtResource( 2 )
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2( 265, 505 )
+position = Vector2( 25.5, 580 )
 shape = SubResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [connection signal="animation_finished" from="Sprite" to="Sprite" method="_on_Sohn_animation_finished"]
